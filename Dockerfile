@@ -19,6 +19,8 @@ COPY . .
 
 EXPOSE 80
 
-# Create a npm start script in your package.json,
-# then uncomment line bellow.
-# CMD ["npm", "start"]
+# Create a npm start script in your package.json.
+# If you want to run a different command, change
+# what is after CMD bellow. You can also leave it out,
+# to do so comment out line bellow.
+CMD ["npm", "start"]
