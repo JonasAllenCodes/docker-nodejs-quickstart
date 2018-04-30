@@ -9,21 +9,18 @@ Docker Hub: [https://hub.docker.com/r/jonasallencodes/docker-nodejs-quickstart/]
 * Docker
 
 ## Install Project NPM Packages
-You will need to make a "package.json" file before starting this container. Optionally you can create the "package-lock.json" file now also. If you look into the "Dockerfile", you will see it copies the files over into the container and runs `npm install`. Which will create the "package-lock.json" file, if not created yet. After that it copies the rest of the project files into the container and will finish initializing the container.
+You will need to make a "package.json" file before starting this container. As an option, you can create the "package-lock.json" file now. If you look into the "Dockerfile", you will see it copies the files over into the container and runs `npm install`. This will create the "package-lock.json" file, if not created yet. After that it copies the rest of the project files into the container and will finish initializing the container.
 
 > ### package.json Requirements
->> Your "package.json" will need to have a script that runs a command that runs your app. "Dockerfile" assumes your script name to run the script is "start". If you would like to use a different name you will need to update the "package.json" file accordingly. If you are not ready to have a "start" script within your "package.json" file, you can just comment out the line, `CMD ["npm", "start"]`, within the "Dockerfile".
+>> Your "package.json" will need to have a script that runs a command that will start your app. "Dockerfile" assumes your script name to run the script is "start". If you would like to use a different name you will need to update the "package.json" file accordingly. If you are not ready to have a "start" script within your "package.json" file, you can comment out the line, `CMD ["npm", "start"]`, within the "Dockerfile".
 
 ## Run Container from my Docker Cloud Repository
-**YOU MUST NOT CHANGE TO ALTERNATIVE METHODS FROM ABOVE TO RUN CONTAINER FROM MY CLOUD REPOSITORY**
-
-> **EXAMPLE: CHANGE NAME OF OR REMOVE "start" SCRIPT**
 
 Run in project directory on your command line:
 
 $ `docker run -p 29170:80 -d jonasallencodes/docker-nodejs-quickstart`
 
-If you want to run the container in detached mode (run in the background), make sure to include the -d tag. You will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
+If you want to run the container in detached mode (run in the background), make sure to include the -d tag. Next you will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
 
 **IF YOU FOLLOW THIS METHOD YOU DO NOT NEED TO BUILD AND RUN THE CONTAINER ON YOUR MACHINE.**
 
@@ -69,7 +66,7 @@ eplace `<image-name>` with the real name of your container.
 
 Example: $ `docker run -p 29170:80 -d docker-nodejs-quickstart`
 
-If you want to run the container in detached mode (run in the background), make sure to include the -d tag. You will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". If you want to change the container's exposed port you will need to also change in the "Dockerfile" after "EXPOSE". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
+If you want to run the container in detached mode (run in the background), make sure to include the -d tag. Next, you will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". If you want to change the container's exposed port you will need to also change in the "Dockerfile" after "EXPOSE". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
 
 ## Stop Running Container
 If you would like to stop your container follow below steps.
@@ -97,7 +94,7 @@ Run, $ `docker login`
 
 Follow login instructions.
 
-Now we are logged in under out Docker Cloud account.
+Now you are logged in under your Docker Cloud account.
 
 ### Tag the Image
 The notation for associating a local image with a repository on a registry is username/repository:tag. The tag is optional, but recommended, since it is the mechanism that registries use to give Docker images a version. Give the repository and tag meaningful names for the context, such as docker-nodejs-quickstart:0.0.1. This puts the image in the get-started repository and tag it as 0.0.1.
@@ -129,7 +126,7 @@ From now on, you can use docker run and run your app on any machine with this co
 
 $ `docker run -p 29170:80 -d username/repository:tag`
 
-Replace "username/repository:tag" accordingly. If you want to run the container in detached mode (run in the background), make sure to include the -d tag. You will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". If you want to change the container's exposed port you will need to also change in the "Dockerfile" after "EXPOSE". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
+Replace "username/repository:tag" accordingly. If you want to run the container in detached mode (run in the background), make sure to include the -d tag. Next you will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". If you want to change the container's exposed port you will need to also change in the "Dockerfile" after "EXPOSE". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
 
 ## Credit
-Parts of this came from instructions from, [https://docs.docker.com/get-started/part2/](https://docs.docker.com/get-started/part2/).
+Parts of this came from instructions at, [https://docs.docker.com/get-started/part2/](https://docs.docker.com/get-started/part2/).
