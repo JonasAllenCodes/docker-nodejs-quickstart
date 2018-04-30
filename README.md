@@ -1,9 +1,12 @@
 # Basic Node.js Docker Quickstart
 This is a simple Docker Container to be used as start to a Node.js project within a Docker container.
 
-Github: 
+Github: [https://github.com/JonasAllenCodes/docker-nodejs-quickstart](https://github.com/JonasAllenCodes/docker-nodejs-quickstart)
 
 Docker Hub: [https://hub.docker.com/r/jonasallencodes/docker-nodejs-quickstart/](https://hub.docker.com/r/jonasallencodes/docker-nodejs-quickstart/)
+
+## Requirements
+* Docker
 
 ## Install Project NPM Packages
 You will need to make a "package.json" file before starting this container. Optionally you can create the "package-lock.json" file now also. If you look into the "Dockerfile", you will see it copies the files over into the container and runs `npm install`. Which will create the "package-lock.json" file, if not created yet. After that it copies the rest of the project files into the container and will finish initializing the container.
