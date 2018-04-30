@@ -1,0 +1,13 @@
+{
+	"name": "docker-nodejs-quickstart",
+	"version": "0.0.1",
+	"description": "This is a simple Docker Container to be used as start to a Node.js project within a Docker container.",
+	"author": "Jonas Allen <Hello@JonasAllen.Codes>",
+	"main": "",
+	"scripts": {
+		"start": "node"
+	},
+	"dependencies": {
+
+	}
+}
