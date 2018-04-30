@@ -100,7 +100,7 @@ Follow login instructions.
 Now we are logged in under out Docker Cloud account.
 
 ### Tag the Image
-The notation for associating a local image with a repository on a registry is username/repository:tag. The tag is optional, but recommended, since it is the mechanism that registries use to give Docker images a version. Give the repository and tag meaningful names for the context, such as get-started:part2. This puts the image in the get-started repository and tag it as part2.
+The notation for associating a local image with a repository on a registry is username/repository:tag. The tag is optional, but recommended, since it is the mechanism that registries use to give Docker images a version. Give the repository and tag meaningful names for the context, such as docker-nodejs-quickstart:0.0.1. This puts the image in the get-started repository and tag it as 0.0.1.
 
 Now, put it all together to tag the image. Run docker tag image with your username, repository, and tag names so that the image uploads to your desired destination. The syntax of the command is:
 
@@ -130,3 +130,6 @@ From now on, you can use docker run and run your app on any machine with this co
 $ `docker run -p 29170:80 -d username/repository:tag`
 
 Replace "username/repository:tag" accordingly. If you want to run the container in detached mode (run in the background), make sure to include the -d tag. You will need the -p tag, this tag routes the exposed container port to the host machines port. So "29170" is the port that is forwarding to the container's exposed port "80". You must keep the port "80" as it is the port exposed in the "Dockerfile". If you want to change the container's exposed port you will need to also change in the "Dockerfile" after "EXPOSE". Now you may need to change the port being used on the host machine if it is already being used or for other reasons. To do so you only need to change "29170" in the above command.
+
+## Credit
+Parts of this came from instructions from, [https://docs.docker.com/get-started/part2/](https://docs.docker.com/get-started/part2/).
